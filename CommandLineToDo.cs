@@ -6,10 +6,9 @@ namespace CommandLineToDo
     {
         public static void Main(string[] args)
         {
-            ListItem firstItem = new ListItem("First task");
-            ListItem secondItem = new ListItem("Second task");
-            List<ListItem> TestToDos = new List<ListItem> {firstItem, secondItem};
-            ToDoList HelloWorldList = new ToDoList(TestToDos);
+            ToDoList HelloWorldList = new ToDoList();
+            HelloWorldList.Add("First Task");
+            HelloWorldList.Add("Second Task", 5);
             HelloWorldList.DisplayList();
         }
     }
