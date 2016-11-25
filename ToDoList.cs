@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace CommandLineToDo
 {
+    //This class may just be a superfluous wrapper for a List of ListItems, 
+    //but it's my first stab at C# and I want the practice.
+    //If nothing else, it might make Main a little more human readable. 
     class ToDoList
     {
         protected List<ListItem> ActualList{ get; private set; }
@@ -37,6 +40,12 @@ namespace CommandLineToDo
             ListItem NewItem = new ListItem(task, priority);
             ActualList.Add(NewItem);
             return ActualList;
+        }
+
+        //for use in Sort wrapper
+        private ListItemComparer ListSorter = new ListItemComparer();
+        public void Sort(){
+            ActualList.Sort(ListSorter);
         }
     }
     
