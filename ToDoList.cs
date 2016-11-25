@@ -1,11 +1,13 @@
 using System;
+using System.Collections.Generic;
+
 namespace CommandLineToDo
 {
     class ToDoList
     {
-        protected ListItem[] ActualList{ get; private set; }
+        protected List<ListItem> ActualList{ get; private set; }
 
-        public ToDoList(ListItem[] items)
+        public ToDoList(List<ListItem> items)
         {
             ActualList = items;
         }

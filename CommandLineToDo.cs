@@ -1,4 +1,6 @@
-﻿namespace CommandLineToDo
+﻿using System.Collections.Generic;
+
+namespace CommandLineToDo
 {
     public class Program
     {
@@ -6,8 +8,8 @@
         {
             ListItem firstItem = new ListItem("First task");
             ListItem secondItem = new ListItem("Second task");
-            ListItem[] listArr = new ListItem[] {firstItem, secondItem};
-            ToDoList HelloWorldList = new ToDoList(listArr);
+            List<ListItem> TestToDos = new List<ListItem> {firstItem, secondItem};
+            ToDoList HelloWorldList = new ToDoList(TestToDos);
             HelloWorldList.DisplayList();
         }
     }
