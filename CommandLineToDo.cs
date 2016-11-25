@@ -7,7 +7,7 @@
             ListItem firstItem = new ListItem("First task");
             ListItem secondItem = new ListItem("Second task");
             ListItem[] listArr = new ListItem[] {firstItem, secondItem};
-            List HelloWorldList = new List(listArr);
+            ToDoList HelloWorldList = new ToDoList(listArr);
             HelloWorldList.DisplayList();
         }
     }

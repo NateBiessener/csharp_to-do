@@ -1,18 +1,18 @@
 using System;
 namespace CommandLineToDo
 {
-    class List
+    class ToDoList
     {
-        protected ListItem[] ToDoList{ get; private set; }
+        protected ListItem[] ActualList{ get; private set; }
 
-        public List(ListItem[] items)
+        public ToDoList(ListItem[] items)
         {
-            ToDoList = items;
+            ActualList = items;
         }
 
         public void DisplayList()
         {
-            foreach (ListItem item in ToDoList)
+            foreach (ListItem item in ActualList)
             {
                 Console.WriteLine(item.Task);
             }
