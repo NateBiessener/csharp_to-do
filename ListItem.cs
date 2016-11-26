@@ -2,7 +2,7 @@ namespace CommandLineToDo
 {
     class ListItem
     {
-        public string Task {get; private set;}
+        public string Task {get; set;}
 
         public int Priority {get; set;}
         public ListItem(string task)

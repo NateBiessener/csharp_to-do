@@ -22,9 +22,9 @@ namespace CommandLineToDo
 
         public void DisplayList()
         {
-            foreach (ListItem item in ActualList)
+            for (int i = 0; i < ActualList.Count; i++)
             {
-                Console.WriteLine(item.Task + " " + item.Priority);
+                Console.WriteLine((i+1) + ". " + ActualList[i].Task + " " + ActualList[i].Priority);
             }
         }
 
@@ -42,6 +42,17 @@ namespace CommandLineToDo
             return ActualList;
         }
 
+        public List<ListItem> ChangeTask(int itemIndex, string newTask)
+        {
+            ActualList[itemIndex - 1].Task = newTask;
+            return ActualList;
+        }
+
+        public List<ListItem> ChangePriority(int itemIndex, int newPriority)
+        {
+            ActualList[itemIndex - 1].Priority = newPriority;
+            return ActualList;
+        }
         //for use in Sort wrapper
         private ListItemComparer ListSorter = new ListItemComparer();
         public void Sort(){
