@@ -10,14 +10,14 @@ namespace CommandLineToDo
     {
         protected List<ListItem> ActualList{ get; private set; }
 
-        public ToDoList(List<ListItem> items)
-        {
-            ActualList = items;
-        }
-
         public ToDoList()
         {
             ActualList = new List<ListItem> {};
+        }
+
+        public ToDoList(List<ListItem> items)
+        {
+            ActualList = items;
         }
 
         public void DisplayList()
@@ -28,43 +28,51 @@ namespace CommandLineToDo
             }
         }
 
-        public List<ListItem> Add(string task)
+        public void Add(string task)
         {
             ListItem NewItem = new ListItem(task);
             ActualList.Add(NewItem);
-            return ActualList;
         }
 
-        public List<ListItem> Add(string task, int priority)
+        public void Add(string task, int priority)
         {
             ListItem NewItem = new ListItem(task, priority);
             ActualList.Add(NewItem);
-            return ActualList;
         }
 
-        public List<ListItem> ChangeTask(int itemIndex, string newTask)
+        public void ChangeTask(int itemIndex, string newTask)
         {
-            ActualList[itemIndex].Task = newTask;
-            return ActualList;
+            ActualList[itemIndex].SetTask(newTask);
         }
 
-        public List<ListItem> ChangePriority(int itemIndex, int newPriority)
+        public void ChangePriority(int itemIndex, int newPriority)
         {
-            ActualList[itemIndex].Priority = newPriority;
-            return ActualList;
+            ActualList[itemIndex].SetPriority(newPriority);
         }
 
-        public List<ListItem> DeleteItem(int itemIndex)
+        public void DeleteItem(int itemIndex)
         {
             ActualList.RemoveAt(itemIndex);
-            return ActualList;
         }
 
-        //for use in Sort wrapper
+        public bool ContainsIndex(int index)
+        {
+            try
+            {
+                var test = ActualList[index];
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private ListItemComparer ListSorter = new ListItemComparer();
         public void Sort(){
             ActualList.Sort(ListSorter);
         }
+
     }
     
 }
