@@ -44,15 +44,22 @@ namespace CommandLineToDo
 
         public List<ListItem> ChangeTask(int itemIndex, string newTask)
         {
-            ActualList[itemIndex - 1].Task = newTask;
+            ActualList[itemIndex].Task = newTask;
             return ActualList;
         }
 
         public List<ListItem> ChangePriority(int itemIndex, int newPriority)
         {
-            ActualList[itemIndex - 1].Priority = newPriority;
+            ActualList[itemIndex].Priority = newPriority;
             return ActualList;
         }
+
+        public List<ListItem> DeleteItem(int itemIndex)
+        {
+            ActualList.RemoveAt(itemIndex);
+            return ActualList;
+        }
+
         //for use in Sort wrapper
         private ListItemComparer ListSorter = new ListItemComparer();
         public void Sort(){
