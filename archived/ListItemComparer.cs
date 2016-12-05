@@ -1,3 +1,6 @@
+//no longer in use, refactored ListItem to inherit System.IComparable<T> interface and moved this code to the class.
+//leaving the file in the repo for archival purposes
+
 using System.Collections.Generic;
 
 namespace CommandLineToDo

@@ -68,9 +68,8 @@ namespace CommandLineToDo
             }
         }
 
-        private ListItemComparer ListSorter = new ListItemComparer();
         public void Sort(){
-            ActualList.Sort(ListSorter);
+            ActualList.Sort();
         }
 
     }
